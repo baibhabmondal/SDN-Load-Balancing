@@ -41,6 +41,8 @@ mininet> iperf n0 (any node; to measure bandwidth)
 
 (username: onos; passwd: rocks)
 
+press '/' to bring up the menu
+
 ```
 
 * Enable following applications:
