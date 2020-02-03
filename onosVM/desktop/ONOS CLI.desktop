@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ONOS CLI
+Comment=
+Exec=/bin/bash -i -c 'onos'
+Icon=/home/sdn/Downloads/cells.512.png
+Path=/home/sdn
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Setup ONOS Cluster
+Comment=
+Exec=/bin/bash -c 'bin/destroyCluster; bin/createCluster'
+Icon=preferences-system-power
+Path=/home/sdn
+Terminal=true
+StartupNotify=false

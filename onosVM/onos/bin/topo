@@ -1,0 +1,14 @@
+#!/bin/bash
+# -----------------------------------------------------------------------------
+# Starts the specified mininet topology.
+# -----------------------------------------------------------------------------
+cd $ONOS_ROOT/topos
+
+topo=${1:-default}
+
+onos $OC1 wipe-out please
+onos-netcfg $OC1 $topo.json
+
+[ -n "$1" ] && shift
+sudo mn -c
+sudo python $topo.py $ONOS_INSTANCES

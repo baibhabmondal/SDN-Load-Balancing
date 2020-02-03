@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=ONOS
+Comment=
+Icon=/home/sdn/Downloads/cells.512.png
+URL=http://172.17.0.5:8181/onos/ui
+Name[en_US]=ONOS GUI

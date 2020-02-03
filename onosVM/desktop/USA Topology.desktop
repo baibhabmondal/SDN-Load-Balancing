@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=USA MPLS Topology
+Comment=
+Exec=/bin/bash -i -c 'topo default'
+Icon=/home/sdn/Downloads/topo.icon.png
+Path=/home/sdn
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spine Leaf Topology
+Comment=
+Exec=/bin/bash -i -c 'topo tower'
+Icon=/home/sdn/Downloads/topo.icon.png
+Path=/home/sdn
+Terminal=true
+StartupNotify=false
