@@ -57,3 +57,10 @@ OpenFlow Provider Suite
 Optical Network Model
 Reactive Forwarding
 ```
+
+* Extract Load of CPUs
+
+```
+xterm n0 ( where n0 is the controller node name)
+awk '$1~/cpu[0-9]/{usage=($2+$4)*100/($2+$4+$5); print $1": "usage"%"}' /proc/stat
+```
