@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{listings}
+
+
+\algdef{SE}[SUBALG]{Indent}{EndIndent}{}{\algorithmicend\ }%
+\algtext*{Indent}
+\algtext*{EndIndent}
+
+\begin{document}
+\begin{algorithm}
+\caption{Algorithm for K-Range}
+\textbf{Input $  \gets [ L_c_1, L_c_2, L_c_3,..... L_c_n] $}
+\newline
+\textbf{Output $ \longrightarrow O_C, NO_C $} 
+\begin{algorithmic}[1]
+\State $ O_C \gets \{\}$ 
+\State $ NO_C \gets \{\}$ 
+\State $ i \gets 0 $
+\State $ sum \gets 0 $
+\While {$ i < n $}
+\State  $ sum \gets sum + L_c_i$
+\EndWhile
+\State $ i \gets 0 $
+\State $ finalSum \gets 0$
+\While {$ i < n$}
+\State $finalSum \gets finalSum + K ((sum - L_c_i)/h)$
+\EndWhile
+\State $ f(x) \gets finalsum / n $
+\State $ LocalMinimas \rightarrow [m_1, m_2,..m_k]  $
+\State \textbf{Form clusters}
+\Indent
+\State $ Cluster_1 \gets C_i, L_c_i < m_1 $
+\State $ Cluster_2 \gets C_i, m1 < L_c_i < m_2 $
+\State $ Cluster_k \gets C_i, L_c_i > m_k $
+\EndIndent
+\State \textbf{Sort $ [Cluster_1, Cluster_2,.. Cluster_n] $}
+\Indent
+\State $ Cluster_1 \gets [c_i, c_j] $
+\State $ Cluster_2 \gets [c_k, c_l, c_m] $
+\State $ Cluster_n \gets [c_a, c_b] $
+\EndIndent
+\State $ n \gets NoOflocalMinima + 1 $
+\State $ j \gets clusterNumber $
+\While {$ i < j  $}
+\If { $ i > j/2 $ }
+\State $ O_c \gets Cluster_i $
+\Else
+\State $ NO_C \gets Cluster_i $
+\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+\end{document}
