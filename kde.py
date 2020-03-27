@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from scipy.signal import argrelextrema
 
 def k():
-    X = np.array([10,11,9,23,21,11,45,20,11,12]).reshape(-1,1)
+    X = np.array([12,11,9,23,23,10,45,20,11,12]).reshape(-1,1)
     kde = KernelDensity(kernel = 'gaussian', bandwidth=3).fit(X)
     s = np.linspace(0,50)
     e = kde.score_samples(s.reshape(-1,1))
@@ -16,12 +16,16 @@ def k():
     print ("Maxima:", s[ma])
     print (X[X < mi[0]], X[(X >= mi[0]) * (X <= mi[1])], X[X >= mi[1]])
     plt.plot(s,e)
+    plt.xlabel('Load')
+    plt.ylabel('Kernel Density Estimate')
     plt.show()
     plt.plot(s[:mi[0]+1], e[:mi[0]+1], 'r',
      s[mi[0]:mi[1]+1], e[mi[0]:mi[1]+1], 'g',
      s[mi[1]:], e[mi[1]:], 'b',
      s[ma], e[ma], 'go',
      s[mi], e[mi], 'ro')
+    plt.xlabel('Load')
+    plt.ylabel('Kernel Density Estimate')
     plt.show()
     #print(plot(s,e))
 

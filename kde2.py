@@ -11,7 +11,7 @@ def k():
     op = subprocess.check_output(['awk', '$1~/cpu[0-9]/{usage=($2+$4)*100/($2+$4+$5); print usage}', '/proc/stat'])
     ar = op.split('\n')[0:-1]
     ar = list(map(float, ar))
-    # ar.extend([4.0,30.0,24.0])
+    ar.extend([4.0,30.0,24.0])
     print(ar)
     X = np.array(ar).reshape(-1,1)
     kde = KernelDensity(kernel = 'gaussian', bandwidth=3).fit(X)
@@ -31,14 +31,17 @@ def k():
     else:
         print (X[X < mi[0]], X[(X >= mi[0]) * (X <= mi[1])], X[X >= mi[1]]) 
     plt.plot(s,e)
+    plt.xlabel('Load')
+    plt.ylabel('Similarity index')
     plt.show()
     plt.plot(s[:mi[0]+1], e[:mi[0]+1], 'r',
     s[mi[0]:mi[1]+1], e[mi[0]:mi[1]+1], 'g',
     s[mi[1]:], e[mi[1]:], 'b',
-    s[ma], e[ma], 'go',
     s[mi], e[mi], 'ro')
+    plt.xlabel('Load')
+    plt.ylabel('Similarity index')
     plt.show()
-    print(plot(s,e))
+    # print(plot(s,e))
 
 if __name__ == "__main__":
     k()
